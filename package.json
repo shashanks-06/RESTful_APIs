@@ -1,0 +1,11 @@
+{
+  "name": "restful_apis",
+  "version": "1.0.0",
+  "description": "learning restful apis",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shashank Surjekar",
+  "license": "ISC"
+}
