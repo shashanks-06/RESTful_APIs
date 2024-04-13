@@ -1,21 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
+import { v4 as uuidv4 } from "uuid";
 
 const app = express();
 const PORT = 5000;
 
-let notes = [
-  {
-    title: "Sample Note",
-    content: "A note should have a content",
-    isDraft: true,
-  },
-  {
-    title: "Sample Note 2",
-    content: "A content should have a Note",
-    isDraft: true,
-  },
-];
+let notes = [];
 
 app.use(bodyParser.json());
 
@@ -26,8 +16,9 @@ app.get("/notes", (req, res) => {
 });
 
 app.post("/create", (req, res) => {
-  console.log(req.body);
-  res.send("Created a note");
+  const note = req.body;
+  notes.push({ ...note, id: uuidv4() });
+  res.send(`Created a note of title ${note.title}`);
 });
 
 app.get("/note/:id", (req, res) => {
