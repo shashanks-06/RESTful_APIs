@@ -15,15 +15,27 @@ app.get("/notes", (req, res) => {
   res.send(notes);
 });
 
-app.post("/create", (req, res) => {
+app.post("/notes", (req, res) => {
   const note = req.body;
   notes.push({ ...note, id: uuidv4() });
   res.send(`Created a note of title ${note.title}`);
 });
 
-app.get("/note/:id", (req, res) => {
-  console.log(req.params);
-  res.send("A Note");
+app.get("/notes/:id", (req, res) => {
+  const { id } = req.params;
+  const note = notes.find((note) => note.id === id);
+
+  res.send(note);
 });
 
-app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
+app.delete("/notes/:id", (req, res) => {
+  const { id } = req.params;
+
+  notes = notes.filter((note) => note.id != id);
+
+  res.send(`Note with id ${id} is deleted`);
+});
+
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
+);
