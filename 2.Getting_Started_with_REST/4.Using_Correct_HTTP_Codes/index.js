@@ -36,6 +36,17 @@ app.delete("/notes/:id", (req, res) => {
   res.send(`Note with id ${id} is deleted`);
 });
 
+app.patch("/notes/:id", (req, res) => {
+  const { id } = req.params;
+  const { title, content, isDraft } = req.body;
+
+  const note = notes.find((note) => note.id === id);
+
+  if (title) {
+    
+  }
+});
+
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 );
