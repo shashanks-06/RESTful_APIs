@@ -43,8 +43,18 @@ app.patch("/notes/:id", (req, res) => {
   const note = notes.find((note) => note.id === id);
 
   if (title) {
-    
+    note.title = title;
   }
+
+  if (content) {
+    note.content = content;
+  }
+
+  if (isDraft) {
+    note.isDraft = isDraft;
+  }
+
+  res.send(`Note with id: ${id} is updated with ease!`);
 });
 
 app.listen(PORT, () =>
