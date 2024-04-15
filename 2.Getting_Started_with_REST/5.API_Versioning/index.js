@@ -23,7 +23,7 @@ app.get("/v2/notes", (req, res) => {
 app.post("/v1/notes", (req, res) => {
   const note = req.body;
   notes.push({ ...note, id: uuidv4() });
-  res.send(`Created a note of title ${note.title}`);
+  res.send(`Created a note of title: ${note.title}`);
 });
 
 app.get("/v1/notes/:id", (req, res) => {

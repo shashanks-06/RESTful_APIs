@@ -6,10 +6,11 @@ import {
   createNote,
   updateNote,
   deleteNote,
-} from "./controllers/v1/note";
+} from "./controllers/v1/note.js";
 
 const app = express();
 const PORT = 5000;
+app.use(bodyParser.json());
 
 app.get("/v1/notes", getNotes);
 app.get("/v1/notes/:id", getNote);

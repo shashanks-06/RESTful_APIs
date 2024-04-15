@@ -8,10 +8,8 @@ export const getNotes = (req, res) => {
 
 export const createNote = (req, res) => {
   const note = req.body;
-
-  notes = notes.push({ ...notes, id: uuidv4() });
-
-  res.send(`Note with title: ${note.title} is added`);
+  notes.push({ ...note, id: uuidv4() });
+  res.send(`Added note with title: ${note.title}.`);
 };
 
 export const getNote = (req, res) => {
