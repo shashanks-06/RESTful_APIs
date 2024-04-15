@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 let notes = [];
 
-export const getNotesForV1 = (req, res) => {
+export const getNotes = (req, res) => {
   res.send(notes);
 };
 
