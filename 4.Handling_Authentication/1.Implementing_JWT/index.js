@@ -3,12 +3,14 @@ import bodyParser from "body-parser";
 
 import notesRoutesV1 from "./routes/v1/node.js";
 import notesRoutesV2 from "./routes/v2/node.js";
+import authRoutesV1 from "./routes/v1/auth.js";
 
 const app = express();
 const PORT = 5000;
 
 app.use(bodyParser.json());
 
+app.use("/v1/login", authRoutesV1);
 app.use("/v1/notes", notesRoutesV1);
 app.use("/v2/notes", notesRoutesV2);
 

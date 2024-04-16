@@ -18,10 +18,11 @@ export const loginUser = (req, res) => {
 
   if (user) {
     const accessToken = jwt.sign(
-      { username: username.username },
+      { username: user.username },
       accessTokenSecret
     );
     res.json({ accessToken });
+    console.log({ accessToken });
   } else {
     res.send("Username or Password is invalid");
   }
