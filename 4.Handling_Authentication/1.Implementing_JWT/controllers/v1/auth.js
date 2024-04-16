@@ -22,7 +22,6 @@ export const loginUser = (req, res) => {
       accessTokenSecret
     );
     res.json({ accessToken });
-    console.log({ accessToken });
   } else {
     res.send("Username or Password is invalid");
   }
