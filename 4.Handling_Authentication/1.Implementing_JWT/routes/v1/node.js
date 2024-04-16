@@ -8,24 +8,26 @@ import {
   updateNote,
   deleteNote,
 } from "../../controllers/v1/notes.js";
+import { authenticateJWT } from "../../controllers/v1/auth.js";
 
 const router = express.Router();
 
 const { body } = validator;
 
-router.get("/", getNotes);
+router.get("/", authenticateJWT, getNotes);
 
-router.get("/:id", getNote);
+router.get("/:id", authenticateJWT, getNote);
 
 router.post(
   "/",
+  authenticateJWT,
   body("title").exists(),
   body("isDraft").isBoolean(),
   createNote
 );
 
-router.delete("/:id", deleteNote);
+router.delete("/:id", authenticateJWT, deleteNote);
 
-router.patch("/:id", updateNote);
+router.patch("/:id", authenticateJWT, updateNote);
 
 export default router;
