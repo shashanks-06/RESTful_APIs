@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info: 
+  version: 1.0.0
+  title: Foodie
+  description: A simple recipe API designed using OpneAPI
+
+servers:
+  - url: http;//foodie.com/api
+
+components: 
+  securitySchemes: 
+    BasicAuth: 
+      type: http
+      scheme: basic
+security:
+  - BasicAuth: []
+
+paths:
+  /recipes:
+    get:
+      description: returns a list of all recipes
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: objects
+                required: 
+                  - r_name
+                properties: 
+                  - r_name:
+                      type: string
+                  -r_time:
+                      type: integer
+                  - r_instructions:
+                      type: string
+      '400':
+        description: Invalid Request
+        content:
+          application/json:
+            schema: 
+              type: object
+              properties:
+                message: 
+                  type: string
