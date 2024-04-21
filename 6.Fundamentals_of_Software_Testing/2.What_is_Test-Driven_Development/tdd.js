@@ -7,3 +7,8 @@ function expect(actual) {
     },
   };
 }
+expect(add(4, 3)).toBe(7);
+
+function add(a, b) {
+  return a + b;
+}
