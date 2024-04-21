@@ -2,10 +2,7 @@ function multiply(a, b) {
   return a + b;
 }
 
-let result = multiply(4, 5);
-let expected = 20;
-
-expect(result).toBe(expected);
+expect(multiply(4, 5)).toBe(20);
 
 function expect(actual) {
   return {
