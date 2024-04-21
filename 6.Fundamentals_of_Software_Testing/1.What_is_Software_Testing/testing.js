@@ -5,6 +5,14 @@ function multiply(a, b) {
 let result = multiply(4, 5);
 let expected = 20;
 
-if (result !== expected) {
-  throw new Error(`${result} is not equal to ${expected}`);
+expect(result).toBe(expected);
+
+function expect(actual) {
+  return {
+    toBe(expected) {
+      if (actual !== expected) {
+        throw new Error(`${actual} is not equal to ${expected}`);
+      }
+    },
+  };
 }
