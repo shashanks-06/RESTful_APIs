@@ -1,9 +1,9 @@
 function test(title, callback) {
   try {
     callback();
-    console.log(`☑️ ${title}`);
+    console.log(`✅ ${title} `);
   } catch (error) {
-    console.error(`❎ ${title}`);
+    console.error(`❌ ${title}`);
     console.error(error);
   }
 }
