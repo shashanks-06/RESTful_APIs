@@ -1,4 +1,5 @@
 import { test, expect } from "./testing-framework.js";
+import { multiply, divide } from "./math.js";
 
 export const divideTest = () => {
   const result = divide(10, 5);
