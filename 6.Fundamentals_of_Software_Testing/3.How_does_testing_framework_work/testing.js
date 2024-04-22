@@ -2,13 +2,25 @@ function divide(a, b) {
   return a / b;
 }
 
-expect(divide(10, 5)).toBe(2);
+const divideTest = () => {
+  const result = divide(10, 5);
+  const expected = 2;
+
+  expect(result).toBe(expected);
+};
 
 function multiply(a, b) {
   return a * b;
 }
 
-expect(multiply(4, 5)).toBe(20);
+const multiplyTest = () => {
+  const result = multiply(4, 5);
+  const expected = 20;
+
+  expect(result).toBe(expected);
+};
+
+test("multiply", multiplyTest);
 
 function test(title, callback) {
   try {
