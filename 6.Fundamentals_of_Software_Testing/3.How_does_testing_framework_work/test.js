@@ -1,4 +1,6 @@
-const divideTest = () => {
+import { test, expect } from "./testing-framework.js";
+
+export const divideTest = () => {
   const result = divide(10, 5);
   const expected = 2;
 
@@ -6,7 +8,7 @@ const divideTest = () => {
 };
 test("divide", divideTest);
 
-const multiplyTest = () => {
+export const multiplyTest = () => {
   const result = multiply(4, 5);
   const expected = 20;
 
@@ -14,5 +16,3 @@ const multiplyTest = () => {
 };
 
 test("multiply", multiplyTest);
-
-module.exports = { divideTest, multiplyTest };
