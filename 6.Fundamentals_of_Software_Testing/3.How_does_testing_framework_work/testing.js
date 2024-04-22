@@ -10,6 +10,16 @@ function multiply(a, b) {
 
 expect(multiply(4, 5)).toBe(20);
 
+function test(title, callback) {
+  try {
+    callback();
+    console.log(`☑️ ${title}`);
+  } catch (error) {
+    console.error(`❎ ${title}`);
+    console.error(error);
+  }
+}
+
 function expect(actual) {
   return {
     toBe(expected) {
