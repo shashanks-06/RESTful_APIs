@@ -8,6 +8,7 @@ const divideTest = () => {
 
   expect(result).toBe(expected);
 };
+test("divide", divideTest);
 
 function multiply(a, b) {
   return a * b;
