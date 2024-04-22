@@ -1,7 +1,7 @@
-import { test, expect } from "./testing-framework.js";
-import { multiply, divide } from "./math.js";
+const { test, expect } = require("./testing-framework.js");
+const { multiply, divide } = require("./math.js");
 
-export const divideTest = () => {
+const divideTest = () => {
   const result = divide(10, 5);
   const expected = 2;
 
@@ -9,7 +9,7 @@ export const divideTest = () => {
 };
 test("divide", divideTest);
 
-export const multiplyTest = () => {
+const multiplyTest = () => {
   const result = multiply(4, 5);
   const expected = 20;
 
@@ -17,3 +17,5 @@ export const multiplyTest = () => {
 };
 
 test("multiply", multiplyTest);
+
+module.exports = { divideTest, multiplyTest };

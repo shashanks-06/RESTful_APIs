@@ -1,4 +1,4 @@
-export function test(title, callback) {
+function test(title, callback) {
   try {
     callback();
     console.log(`☑️ ${title}`);
@@ -8,7 +8,7 @@ export function test(title, callback) {
   }
 }
 
-export function expect(actual) {
+function expect(actual) {
   return {
     toBe(expected) {
       if (actual !== expected) {
@@ -17,3 +17,5 @@ export function expect(actual) {
     },
   };
 }
+
+module.exports = { test, expect };
