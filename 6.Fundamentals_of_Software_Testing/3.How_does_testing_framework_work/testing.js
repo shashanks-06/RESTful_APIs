@@ -2,6 +2,10 @@ function divide(a, b) {
   return a / b;
 }
 
+function multiply(a, b) {
+  return a * b;
+}
+
 const divideTest = () => {
   const result = divide(10, 5);
   const expected = 2;
@@ -9,10 +13,6 @@ const divideTest = () => {
   expect(result).toBe(expected);
 };
 test("divide", divideTest);
-
-function multiply(a, b) {
-  return a * b;
-}
 
 const multiplyTest = () => {
   const result = multiply(4, 5);
