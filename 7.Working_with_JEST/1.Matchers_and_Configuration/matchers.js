@@ -18,6 +18,8 @@ test("adding positive number is not zero", () => {
   }
 });
 
+/* -------------------------------------------------------------------------------------------- */
+
 //Truthyness
 
 test("null", () => {
@@ -36,4 +38,28 @@ test("zero", () => {
   expect(z).not.toBeUndefined();
   expect(z).not.toBeTruthy();
   expect(z).toBeFalsy();
+});
+
+/* -------------------------------------------------------------------------------------------- */
+
+//Numbers
+
+test("two plus two", () => {
+  const value = 2 + 2;
+
+  expect(value).toBeLessThan(5);
+  expect(value).toBeLessThanOrEqual(4.5);
+  expect(value).toBeGreaterThan(3);
+  expect(value).toBeGreaterThanOrEqual(3.5);
+
+  expect(value).toBe(4);
+  expect(value).toEqual(4);
+});
+
+test("adding floating point numbers", () => {
+  const value = 0.2 + 0.3;
+
+  expect(value).toBe(0.5); // This doesn't works because of rounding errors
+
+  expect(value).toBeCloseTo(0.5); // This works.
 });
