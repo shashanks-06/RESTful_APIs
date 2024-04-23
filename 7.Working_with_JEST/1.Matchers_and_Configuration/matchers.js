@@ -76,3 +76,15 @@ test("testing a test", () => {
   expect("testing").toMatch(/ing/);
 });
 
+/* -------------------------------------------------------------------------------------------- */
+
+//Arrays and Iterables
+
+const shoppingList = ["bananas", "tissues", "cereals", "cheese", "milk"];
+
+test("the shopping list has cheese on it", () => {
+  expect(shoppingList).toContain("cheese");
+  expect(new Set(shoppingList)).toContain("cheese");
+});
+
+/* -------------------------------------------------------------------------------------------- */
