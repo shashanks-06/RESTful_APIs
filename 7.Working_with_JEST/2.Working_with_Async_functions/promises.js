@@ -23,3 +23,17 @@ test("the fetch fails with an error", async () => {
     expect(err).toMatch("error");
   }
 });
+
+// refactor ; combining async await with .resolves and .rejects
+
+test("the data is cereal", async () => {
+  await expect(fetchData()).resolves.toBe("cereal");
+});
+
+test("the fetch fails with an error", async () => {
+  await expect(fetchData()).rejects.toBe("error");
+});
+
+test("the fetch fails with an error", () => {
+  return fetchData().catch((e) => expect(e).toMatch("error"));
+});
