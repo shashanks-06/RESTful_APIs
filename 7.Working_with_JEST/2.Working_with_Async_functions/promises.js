@@ -57,3 +57,15 @@ test("the data is cereal", (done) => {
   }
   fetchData(callback);
 });
+
+/* -------------------------------------------------------------------------------------------- */
+
+//4. .resolves & .rejects
+
+test("the data is cereal", () => {
+  return expect(fetchData()).resolves.toBe("cereal");
+});
+
+test("the fetch fails with an error", () => {
+  return expect(fetchData()).rejects.toMatch("error");
+});
