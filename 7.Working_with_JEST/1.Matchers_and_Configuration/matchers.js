@@ -88,3 +88,21 @@ test("the shopping list has cheese on it", () => {
 });
 
 /* -------------------------------------------------------------------------------------------- */
+
+// Exceptions
+
+function compileAndroidCode() {
+  throw new Error("you are using the wrong JDK");
+}
+
+//Note:-> the function that throws an exception needs to be invoke in wrapping function otherwise throw assertion will fail. So thats why anonymouse function `() => ` is used.
+
+test("compiling android goes as expected", () => {
+  expect(() => compileAndroidCode()).toThrow();
+  expect(() => compileAndroidCode()).toThrow(Error);
+
+  expect(() => compileAndroidCode()).toThrow("you are using the wrong JDK");
+  expect(() => compileAndroidCode()).toThrow(/JDK/);
+});
+
+/* -------------------------------------------------------------------------------------------- */
