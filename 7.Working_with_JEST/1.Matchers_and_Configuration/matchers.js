@@ -63,3 +63,16 @@ test("adding floating point numbers", () => {
 
   expect(value).toBeCloseTo(0.5); // This works.
 });
+
+/* -------------------------------------------------------------------------------------------- */
+
+//Strings
+
+test("learning Jest is fun", () => {
+  expect("Jest").not.toMatch(/boring/);
+});
+
+test("testing a test", () => {
+  expect("testing").toMatch(/ing/);
+});
+
