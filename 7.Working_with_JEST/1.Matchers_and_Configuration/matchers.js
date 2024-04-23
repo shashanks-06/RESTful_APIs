@@ -1,4 +1,4 @@
-// Common Matchers
+// 1. Common Matchers
 
 test("four plus for is eight", () => {
   expect(4 + 4).toBe(8);
@@ -18,9 +18,9 @@ test("adding positive number is not zero", () => {
   }
 });
 
-/* -------------------------------------------------------------------------------------------- */
+/* ============================================================================================ */
 
-//Truthyness
+// 2. Truthyness
 
 test("null", () => {
   const n = null;
@@ -40,9 +40,9 @@ test("zero", () => {
   expect(z).toBeFalsy();
 });
 
-/* -------------------------------------------------------------------------------------------- */
+/* ============================================================================================ */
 
-//Numbers
+// 3. Numbers
 
 test("two plus two", () => {
   const value = 2 + 2;
@@ -64,9 +64,9 @@ test("adding floating point numbers", () => {
   expect(value).toBeCloseTo(0.5); // This works.
 });
 
-/* -------------------------------------------------------------------------------------------- */
+/* ============================================================================================ */
 
-//Strings
+// 4. Strings
 
 test("learning Jest is fun", () => {
   expect("Jest").not.toMatch(/boring/);
@@ -76,9 +76,9 @@ test("testing a test", () => {
   expect("testing").toMatch(/ing/);
 });
 
-/* -------------------------------------------------------------------------------------------- */
+/* ============================================================================================ */
 
-//Arrays and Iterables
+// 5. Arrays and Iterables
 
 const shoppingList = ["bananas", "tissues", "cereals", "cheese", "milk"];
 
@@ -87,9 +87,9 @@ test("the shopping list has cheese on it", () => {
   expect(new Set(shoppingList)).toContain("cheese");
 });
 
-/* -------------------------------------------------------------------------------------------- */
+/* ============================================================================================ */
 
-// Exceptions
+// 6. Exceptions
 
 function compileAndroidCode() {
   throw new Error("you are using the wrong JDK");
@@ -105,4 +105,26 @@ test("compiling android goes as expected", () => {
   expect(() => compileAndroidCode()).toThrow(/JDK/);
 });
 
-/* -------------------------------------------------------------------------------------------- */
+/* ============================================================================================ */
+
+// 7. Setup and Teardown
+
+// 1. Repeating Setup
+
+beforeEach(() => {
+  initializeCityDatabase();
+});
+
+afterEach(() => {
+  clearCityDatabase();
+});
+
+test("city database has Vienna", () => {
+  expect(isCity("Vienna")).toBeTruthy();
+});
+
+test("city database has San Juan", () => {
+  expect(isCity("San Juan")).toBeTruthy();
+});
+
+/* ------------------------------------------------------------------------------------------- */
