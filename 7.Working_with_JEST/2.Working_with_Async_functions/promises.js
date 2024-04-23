@@ -37,3 +37,23 @@ test("the fetch fails with an error", async () => {
 test("the fetch fails with an error", () => {
   return fetchData().catch((e) => expect(e).toMatch("error"));
 });
+
+/* -------------------------------------------------------------------------------------------- */
+
+// 3. Callbacks
+
+test("the data is cereal", (done) => {
+  function callback(error, data) {
+    if (error) {
+      done(error);
+      return;
+    }
+    try {
+      expect(data).toBe("cereal");
+      done();
+    } catch (error) {
+      done(error);
+    }
+  }
+  fetchData(callback);
+});
