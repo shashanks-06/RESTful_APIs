@@ -128,3 +128,23 @@ test("city database has San Juan", () => {
 });
 
 /* ------------------------------------------------------------------------------------------- */
+
+// 2. One Time Setup
+
+beforeAll(() => {
+  return initializeCityDatabase();
+});
+
+afterAll(() => {
+  return clearCityDatabase();
+});
+
+test("city database has Vienna", () => {
+  expect(isCity("Vienna")).toBeTruthy();
+});
+
+test("city database has San Juan", () => {
+  expect(isCity("San Juan")).toBeTruthy();
+});
+
+/* ------------------------------------------------------------------------------------------- */
