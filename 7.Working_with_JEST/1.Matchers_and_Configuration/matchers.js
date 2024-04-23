@@ -217,3 +217,15 @@ Output:
         test 2
         test 3
 */
+
+/* ------------------------------------------------------------------------------------------- */
+
+// 5. test.only
+
+test.only("this will be only test that runs", () => {
+  expect(true).toBe(false);
+});
+
+test("this test will not run", () => {
+  expect("A").toBe("A");
+});
