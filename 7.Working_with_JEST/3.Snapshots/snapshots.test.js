@@ -1,4 +1,4 @@
-// External Snapshots
+// 1. External Snapshots
 
 import renderer from "react-test-renderer";
 
@@ -15,11 +15,19 @@ test("myFunction should return correct value", () => {
 //           >>> jest --watch --updateSnapshot
 // ------------------------------------------------------------------------------------------
 
-// Internal Snapshots
+// 2. Internal Snapshots
 
 test("it renders correctly", () => {
   const tree = renderer
     .create(<Link page="https://example.com">Example Site</Link>)
     .toJSON();
-  expect(tree).toMatchInlineSnapshot();
+  expect(tree).toMatchInlineSnapshot(`
+  <a className="normal"
+  href="https://example.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  >
+  Example Site
+  </a>
+  `);
 });
