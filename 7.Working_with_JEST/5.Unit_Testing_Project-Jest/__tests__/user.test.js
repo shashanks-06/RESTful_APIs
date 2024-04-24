@@ -48,3 +48,20 @@ it("tests errors with async/await", async () => {
     });
   }
 });
+
+//Testing for async errors using `.rejects`
+it("tests errors with rejects", () => {
+  expect.assertions(1);
+  return expect(user.getUserName(3)).rejects.toEqual({
+    error: "User with 3 not found",
+  });
+});
+
+//Testing for async/await using `.rejects`
+it("tests errors with async/await and rejects", async () => {
+  expect.assertions(1);
+
+  await expect(user.getUserName(3)).rejects.toEqual({
+    error: "User with 3 not found",
+  });
+});
