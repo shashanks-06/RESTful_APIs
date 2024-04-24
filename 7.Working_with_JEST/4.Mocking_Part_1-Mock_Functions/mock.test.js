@@ -26,3 +26,19 @@ const b = {};
 const bound = myMock2.bind(b);
 bound();
 console.log(myMock2.mock.contexts);
+
+/*----------------------------------------------------------------------------------------------*/
+
+expect(someMockFunction.mock.calls.length).toBe(1);
+
+expect(someMockFunction.mock.calls[0][1]).toBe("first argument");
+
+expect(someMockFunction.mock.calls[0][1]).toBe("second argument");
+
+expect(someMockFunction.mock.results[0].value).toBe("return value");
+
+expect(someMockFunction.mock.contexts[0]).toBe(element);
+
+expect(someMockFunction.mock.instances.length).toBe(2);
+
+expect(someMockFunction.mock.instances[0].name).toBe("test");
