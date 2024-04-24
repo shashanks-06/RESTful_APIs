@@ -26,3 +26,25 @@ it("works with async/await and resolves", async () => {
   expect.assertions(1);
   await expect(user.getUserName(5)).resolves.toEqual("Paul");
 });
+
+//Testing for async errors using Promise.catch
+it("tests errors with promises", () => {
+  expect.assertions(1);
+  return user.getUserName(2).catch((e) =>
+    expect(e).toEqual({
+      error: "User with 2 not found",
+    })
+  );
+});
+
+//Testing for async errors using async/await
+it("tests errors with async/await", async () => {
+  expect.assertions(1);
+  try {
+    await user.getUserName(1);
+  } catch (e) {
+    expect(e).toEqual({
+      error: "User with 1 not found",
+    });
+  }
+});
