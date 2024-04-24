@@ -42,3 +42,16 @@ expect(someMockFunction.mock.contexts[0]).toBe(element);
 expect(someMockFunction.mock.instances.length).toBe(2);
 
 expect(someMockFunction.mock.instances[0].name).toBe("test");
+
+/*----------------------------------------------------------------------------------------------*/
+
+const myMock = jest.fn();
+console.log(myMock);
+// > undefined
+
+myMock
+  .mockReturnValueOnce(10)
+  .mockReturnValueOnce("x")
+  .mockReturnValueOnce(true);
+console.log(myMock(), myMock(), myMock(), myMock());
+// >            10      'x'       true      true
