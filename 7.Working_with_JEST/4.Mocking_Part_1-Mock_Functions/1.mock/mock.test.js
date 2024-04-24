@@ -70,3 +70,14 @@ console.log(filterTestFn.mock.calls[0][0]); // 11
 console.log(filterTestFn.mock.calls[1][0]); // 12
 
 /*----------------------------------------------------------------------------------------------*/
+
+const myMockFnc = jest.fn((cb) => cb(null, true));
+
+myMockFn((err, val) => console.log(val));
+
+const myMockFn = jest
+  .fn()
+  .mockImplementationOnce((cb) => cb(null, true))
+  .mockImplementationOnce((cb) => cb(null, false));
+
+myMockFn((err, val) => console.log(val));
