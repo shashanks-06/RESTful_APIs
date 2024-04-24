@@ -68,3 +68,5 @@ console.log(result); // 11
 
 console.log(filterTestFn.mock.calls[0][0]); // 11
 console.log(filterTestFn.mock.calls[1][0]); // 12
+
+/*----------------------------------------------------------------------------------------------*/
