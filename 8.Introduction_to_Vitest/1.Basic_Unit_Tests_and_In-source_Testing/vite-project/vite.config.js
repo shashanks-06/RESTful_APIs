@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
 
   define: {
-    "import.meta.vitest": undefined, //to prevent tests file for not being loaded in build
+    "import.meta.vitest": undefined, //to prevent tests file for not being loaded in build (production)
   },
 
   test: {
