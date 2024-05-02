@@ -14,7 +14,7 @@ if (import.meta.vitest) {
     });
 
     it.only("Returns same no. with one no.", () => {
-      expect(sum(3)).toBe(3);
+      expect(sum(3)).toBe(3);   
     });
 
     it.skip("Returns sum with multiple no.", () => {

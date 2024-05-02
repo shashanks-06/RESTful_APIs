@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1714642933273" clover="3.2.0">
-  <project timestamp="1714642933273" name="All files">
+<coverage generated="1714642953496" clover="3.2.0">
+  <project timestamp="1714642953496" name="All files">
     <metrics statements="24" coveredstatements="22" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1" elements="28" coveredelements="26" complexity="0" loc="24" ncloc="24" packages="1" files="1" classes="1"/>
     <file name="sum.js" path="C:\Users\shash\OneDrive\Desktop\Web-Development\8.RESTful_APIs\8.Introduction_to_Vitest\2.Coverage_Reports_Concurrent_Tests_and_Filtering\src\sum.js">
       <metrics statements="24" coveredstatements="22" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
