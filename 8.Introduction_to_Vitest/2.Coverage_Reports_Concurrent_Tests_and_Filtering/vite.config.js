@@ -10,7 +10,8 @@ export default defineConfig({
   },
 
   test: {
-    includeSource: ["**/*.{js,ts}"], // to test functions in actual code file itself, rather than creating new file as newFile.test.js
+    includeSource: ["src/**/*.{js,ts}"], // to test functions in actual code file itself, rather than creating new file as newFile.test.js
+    // "src" -> only test files in src folder
 
     globals: true, // to use methods of vitest globally without importing them from library
   },
