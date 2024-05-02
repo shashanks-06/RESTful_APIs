@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1714642381656" clover="3.2.0">
-  <project timestamp="1714642381656" name="All files">
+<coverage generated="1714642781201" clover="3.2.0">
+  <project timestamp="1714642781201" name="All files">
     <metrics statements="47" coveredstatements="24" conditionals="8" coveredconditionals="6" methods="3" coveredmethods="1" elements="58" coveredelements="31" complexity="0" loc="47" ncloc="47" packages="1" files="3" classes="3"/>
     <file name="App.jsx" path="C:\Users\shash\OneDrive\Desktop\Web-Development\8.RESTful_APIs\8.Introduction_to_Vitest\2.Coverage_Reports_Concurrent_Tests_and_Filtering\src\App.jsx">
       <metrics statements="13" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
