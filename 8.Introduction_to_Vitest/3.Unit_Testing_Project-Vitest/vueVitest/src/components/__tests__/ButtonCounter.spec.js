@@ -26,4 +26,9 @@ describe("ButtonCounter", () => {
 
     expect(button.innerHTML).toBe("You Clicked me 1 times.");
   });
+
+  it("matches snapshot", () => {
+    const snap = render(ButtonCounter, { slots: { default: "snapshot" } });
+    expect(snap).toMatchSnapshot();
+  });
 });
