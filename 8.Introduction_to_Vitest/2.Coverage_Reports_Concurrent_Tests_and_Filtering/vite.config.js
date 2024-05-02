@@ -14,7 +14,7 @@ export default defineConfig({
     // "src" -> only test files in src folder
 
     globals: true, // to use methods of vitest globally without importing them from library
-    
+      
     // coverage: ["text", "html"],
   },
 });
