@@ -11,7 +11,7 @@ describe("basic", async () => {
 
   beforeAll(async () => {
     server = await preview({ preview: { port: 3000 } });
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({ headless: false });
     page = await browser.newPage();
   });
 
