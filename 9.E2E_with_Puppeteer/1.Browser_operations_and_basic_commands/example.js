@@ -24,7 +24,7 @@ const puppeteer = require("puppeteer");
 
 // Dimensions of web page
 async function PageDimensions() {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
 
   await page.setViewport({
