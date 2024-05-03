@@ -1,0 +1,14 @@
+{
+  "name": "1.browser_operations_and_basic_commands",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^22.7.1"
+  }
+}
